@@ -1,7 +1,7 @@
 //Valentino Diaz Palma 
 //121124/5
 //Luka Clausel
-//
+//https://youtu.be/mDiHarjca6g
 //
 let pantalla = 1;
 let imagenes = [];
@@ -92,8 +92,8 @@ function manejarSonido() {
   } else if (pantalla === 5) {
     reproducirSonido('medieval');
   } else if (pantalla === 17 || pantalla === 18) {
-    manejarSonidoAlarma(); // Maneja el sonido de la alarma
-    sonidos.SalidaAnimus.stop(); // Detiene el sonido de SalidaAnimus si se llega a estas pantallas
+    manejarSonidoAlarma(); 
+    sonidos.SalidaAnimus.stop(); 
   } else {
     detenerSonidos();
   }
@@ -202,7 +202,7 @@ function mouseClicked() {
 
 function manejarSonidoAlarma() {
   if (pantalla === 17 || pantalla === 18) {
-    if (!sonidos.alarma.isPlaying()) { // Asegurarse de que se esté reproduciendo
+    if (!sonidos.alarma.isPlaying()) { 
       sonidos.alarma.setVolume(0.5);
       sonidos.alarma.loop();
     }
