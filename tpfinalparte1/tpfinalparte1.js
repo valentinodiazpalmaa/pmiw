@@ -2,7 +2,7 @@
 ////// 121124/5
 ////// Luka Clausel
 //////
-let pantalla = 0; // Cambiado a 0 para la pantalla de inicio
+let pantalla = 0; 
 let imagenes = [];
 let textos = [];
 const totalPantallas = 22;
@@ -12,7 +12,7 @@ let decision18 = null;
 let sonidos = {};
 
 function preload() {
-  for (let i = 0; i <= totalPantallas; i++) { // Cargar la Escena 0
+  for (let i = 0; i <= totalPantallas; i++) { 
     imagenes[i] = loadImage(`assets/Escena${i}.jpg`);
   }
   textos = loadStrings('assets/aventura.txt');
@@ -56,7 +56,7 @@ function draw() {
     dibujarBoton(350, 350, 200, 40, "Esperar más compañeros");
   }
   else if (pantalla === 22) { 
-    dibujarBoton(540, 400, 80, 40, "Reiniciar"); // Ubicado en la parte inferior derecha
+    dibujarBoton(540, 400, 80, 40, "Reiniciar"); 
     push();
     stroke(255); 
     strokeWeight(3);
@@ -67,8 +67,8 @@ function draw() {
     
     textSize(18);
     textAlign(CENTER, CENTER);
-    text("Valentino Diaz Palma", width / 2, height - 70); // Sin rectángulo
-    text("Luka Clausel", width / 2, height - 50); // Sin rectángulo
+    text("Valentino Diaz Palma", width / 2, height - 70); 
+    text("Luka Clausel", width / 2, height - 50); 
     pop();
   }
   else if (pantalla === 0) { // Pantalla de inicio
@@ -83,7 +83,7 @@ function draw() {
 }
 
 function mostrarImagen(pantalla) {
-  if (pantalla >= 0 && pantalla <= totalPantallas) { // Cambiado para incluir la pantalla 0
+  if (pantalla >= 0 && pantalla <= totalPantallas) { 
     image(imagenes[pantalla], 0, 0, width, height);
   }
 }
@@ -96,8 +96,8 @@ function manejarSonido() {
   } else if (pantalla === 5) {
     reproducirSonido('medieval');
   } else if (pantalla === 17 || pantalla === 18) {
-    manejarSonidoAlarma(); // Maneja el sonido de la alarma
-    sonidos.SalidaAnimus.stop(); // Detiene el sonido de SalidaAnimus si se llega a estas pantallas
+    manejarSonidoAlarma(); 
+    sonidos.SalidaAnimus.stop(); 
   } else {
     detenerSonidos();
   }
@@ -151,23 +151,23 @@ function mostrarTextoConRectangulo(x, y, ancho, alto, texto) {
   }
 }
 function dibujarBoton(x, y, ancho, alto, texto) {
-  fill(0, 0, 0, 200); // Fondo negro semi-transparente
-  stroke(255); // Borde blanco
-  strokeWeight(2); // Grosor del borde
+  fill(0, 0, 0, 200);
+  stroke(255); 
+  strokeWeight(2); 
   rect(x, y, ancho, alto);
-  fill(255); // Texto blanco
-  noStroke(); // Sin borde para el texto
+  fill(255); 
+  noStroke(); 
   textSize(15);
   textAlign(CENTER, CENTER);
   text(texto, x + ancho / 2, y + alto / 2);
 }
 
 function mouseClicked() {
-  if (pantalla === 0) { // Si está en la pantalla de inicio
-    if (mouseX > 220 && mouseX < 420 && mouseY > 300 && mouseY < 330) { // Botón "Inicio"
-      pantalla = 1; // Ir a la pantalla 1
-    } else if (mouseX > 220 && mouseX < 420 && mouseY > 350 && mouseY < 380) { // Botón "Créditos"
-      pantalla = 22; // Ir a la pantalla de créditos
+  if (pantalla === 0) {
+    if (mouseX > 220 && mouseX < 420 && mouseY > 300 && mouseY < 330) { 
+      pantalla = 1; 
+    } else if (mouseX > 220 && mouseX < 420 && mouseY > 350 && mouseY < 380) { 
+      pantalla = 22; 
     }
   } else if (pantalla === 7 || pantalla === 15 || pantalla === 18) {
     if (mouseX > 100 && mouseX < 300 && mouseY > 350 && mouseY < 390) {
@@ -191,7 +191,7 @@ function mouseClicked() {
   }
 
   if (pantalla === 22) {
-    if (mouseX > 540 && mouseX < 620 && mouseY > 400 && mouseY < 440) { // Botón "Reiniciar"
+    if (mouseX > 540 && mouseX < 620 && mouseY > 400 && mouseY < 440) { 
       pantalla = 1;
       sonidos.alarma.stop();
     }
