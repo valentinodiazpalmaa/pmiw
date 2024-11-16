@@ -1,7 +1,8 @@
 // Valentino Diaz Palma 
 // 121124/5
 // Luka Clausel
-//
+// 121120/0
+// https://youtu.be/mDiHarjca6g 
 let pantalla = 0; 
 let imagenes = [];
 let textos = [];
